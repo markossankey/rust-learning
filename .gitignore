@@ -1,0 +1,5 @@
+# ignore all initially
+*
+# unignore directories and files with extensions (used to ignore binary files)
+!/**/
+!*.*
