@@ -3,3 +3,7 @@
 # unignore directories and files with extensions (used to ignore binary files)
 !/**/
 !*.*
+
+# generated build files from cargo
+*/Cargo.lock
+*/target/*
