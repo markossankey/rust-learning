@@ -5,5 +5,4 @@
 !*.*
 
 # generated build files from cargo
-*/Cargo.lock
 */target/*
