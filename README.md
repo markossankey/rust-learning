@@ -20,3 +20,4 @@ This is a collection of projects that I am working on to learn rust
 - cargo uses Semver to determine what version of a dependancy should be used.  The exact version that is used in the build command is add to the Cargo.lock file
 - rust-lang.org recommends including Cargo.lock in your version control (don't add it to .gitignore)
 - running `cargo update` will update the Cargo.lock file and the local package to the newest **Minor** version (i.e. if you have 0.8.5 in your Cargo.toml, it will never use anything greater than 0.8.n)
+- `cargo doc --open` command will build docuementation provided by your dependencies
