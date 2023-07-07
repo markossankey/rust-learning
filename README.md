@@ -22,9 +22,43 @@ This is a collection of projects that I am working on to learn rust
 - running `cargo update` will update the Cargo.lock file and the local package to the newest **Minor** version (i.e. if you have 0.8.5 in your Cargo.toml, it will never use anything greater than 0.8.n)
 - `cargo doc --open` command will build docuementation provided by your dependencies
 - to handle Result types, you can use match statements... 
-```rust
-match guess.trim().parse() {
-  Ok(num) => num, // return ok answer
-  Err(_) => continue // handle error
-}
-```
+  ```rust
+  match guess.trim().parse() {
+    Ok(num) => num, // return ok answer
+    Err(_) => continue // handle error
+  }
+  ```
+
+## [Section 3.](https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html)
+*Common Programming Concepts*
+
+### Variables and Mutability
+- **variable** - by default, variables are not mutable.  To make the mutable, add the `mut` keyword after let
+  ```rust
+  let x = 5; // cannot be reassigned
+  let mut y = 7; // can be reassigned
+  ```
+- **constants** - assigned with `const` keyword, are completely immutable, and can only be set to a constant expression; not one that gets computed at run time
+  ```rust
+  const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+  ```
+- **shadowing** - reassigning an immutable variable using `let` keyword -- note that after the nested scope, x returns to a value of 6
+  ```rust
+  fn main() {
+      let x = 5;
+
+      let x = x + 1;
+
+      {
+          let x = x * 2;
+          println!("The value of x in the inner scope is: {x}"); // this will be 12
+      }
+
+      println!("The value of x is: {x}"); // this will be 6
+    }
+  ```
+
+- **shadowing vs mut** `mut` keyword requires the type to be the same, "shadowing", or reassigning with `let` keyword means that you can use a different type
+
+### Data types
+
